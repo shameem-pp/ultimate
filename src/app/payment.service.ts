@@ -1,32 +1,26 @@
 import { Injectable } from '@angular/core';
+import { Payment } from './payment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PaymentService {
-
+data:Payment[]=[];
   constructor() { }
 
   getHistory(){
-    let data=[{
-      accountNumber:10000000,
-      amount:10000
-    },
-    {
-      accountNumber:10000000,
-      amount:0
-    },
-    {
-      accountNumber:5000,
-      amount:1000
-    }
-  ]
-  return data
+  return this.data;
   }
   
-  pay(data){
+  pay(data:Payment){
     let value={
-      success:true
+      success:false
+    }
+    if(data.amount!=0&&data.accountNumber!=0){
+      this.data.push(data)
+      value={
+        success:true
+      }
     }
     return value;
   }

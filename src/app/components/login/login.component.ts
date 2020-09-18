@@ -22,6 +22,8 @@ export class LoginComponent implements OnInit {
 
   onLogin() {
     localStorage.setItem("token", "value")
-    this.router.navigate(['/dashboard']);
+    if(this.loginForm.valid){
+      this.router.navigate(['/dashboard']);
+    }
   }
 }

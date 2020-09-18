@@ -13,12 +13,13 @@ const DAILY_LIMIT = 20000;
 })
 export class DashboardComponent implements OnInit {
   option = new FormControl('');
-  amount = new FormControl('');
+  amount = new FormControl('',[Validators.max(20000)]);
   accNum = new FormControl('');
   selected: any;
   constructor(private service:PaymentService,private _snackBar: MatSnackBar,private router:Router) { }
 
   ngOnInit(): void {
+    localStorage.setItem("token","")
   }
   onSelect() {
     this.selected = true;

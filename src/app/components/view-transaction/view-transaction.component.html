@@ -3,7 +3,7 @@
     <th>Amount</th>
     <tr *ngFor="let data of dataSource">
         <td>{{data.accountNumber}}</td>
-        <td>{{data.amount}}</td>
+        <td>{{data.amount | currency:'INR'}}</td>
     </tr>
     <!-- <div *ngFor="let data of dataSource">
         <div>{{data.accountNumber}}</div>

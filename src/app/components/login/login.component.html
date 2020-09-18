@@ -11,6 +11,6 @@
       </mat-form-field>
       <div class="display-flex">
         <button mat-button color="primary">Register</button>
-        <button (click)="onLogin()" mat-button color="primary">Login</button>
+        <button (click)="onLogin()"  [disabled]="!loginForm.valid" mat-button color="primary">Login</button>
       </div>
 </div>
