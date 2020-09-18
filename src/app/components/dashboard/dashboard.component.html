@@ -1,0 +1,21 @@
+<h1>Online Payments App</h1>
+<h2>Pay through</h2>
+
+<button (click)="viewTransaction()" mat-button color="primary"><h2>View Previous transactions</h2></button>
+<mat-label>Choose an option</mat-label>
+  <mat-select [formControl]="option" (selectionChange)="onSelect()">
+    <mat-option value="option1">Option 1</mat-option>
+    <mat-option value="option2" >Option 2</mat-option>
+    <mat-option value="option3">Option 3</mat-option>
+  </mat-select>
+  <div *ngIf="selected">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter the Amount</mat-label>
+        <input type="number" [formControl]="amount" matInput placeholder="Amount">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Account Number</mat-label>
+        <input type="number" [formControl]="accNum" matInput placeholder="Account Number">
+      </mat-form-field>
+      <button (click)="onContinue()" mat-button color="primary">Continue</button>
+  </div>
